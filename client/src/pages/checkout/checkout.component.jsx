@@ -12,7 +12,7 @@ const CheckoutPage = () => {
 
     const date = new Date();
     const year = date.getFullYear();
-    const stringSliceYear = year.toString().slice(2);
+    const sliceYear = year.toString().slice(2);
 
     return (
         <div className="checkout-page">
@@ -40,7 +40,7 @@ const CheckoutPage = () => {
             <div className="test-warning">
                 *Please use the following test credit card for payments*
                 <br />
-                4242 4242 4242 4242 - Exp: 01/{+stringSliceYear + 1} - CVV: 123
+                4242 4242 4242 4242 - Exp: 01/{+sliceYear + 1} - CVV: 123
             </div>
             <StripeCheckoutButton price={cartTotal} />
         </div>
