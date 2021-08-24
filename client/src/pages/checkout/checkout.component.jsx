@@ -19,8 +19,6 @@ import {
 } from './checkout.styles';
 
 const CheckoutPage = ({ cartItems, total }) => {
-    const { cartItems, cartTotal } = useContext(CartContext);
-
     const date = new Date();
     const year = date.getFullYear();
     const sliceYear = year.toString().slice(2);
