@@ -6,22 +6,25 @@ import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 
 import Spinner from '../../components/spinner/spinner.component';
 
+import { ShopPageContainer } from './shop.styles';
+
 const CollectionsOverviewContainer = lazy(() =>
     import(
         '../../components/collections-overview/collections-overview.container'
     )
 );
+
 const CollectionPageContainer = lazy(() =>
     import('../collection/collection.container')
 );
 
-const ShopPage = ({ fetchCollectionsStart, match }) => {
+export const ShopPage = ({ fetchCollectionsStart, match }) => {
     useEffect(() => {
         fetchCollectionsStart();
     }, [fetchCollectionsStart]);
 
     return (
-        <div className="shop-page">
+        <ShopPageContainer>
             <Suspense fallback={<Spinner />}>
                 <Route
                     exact
@@ -33,7 +36,7 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
                     component={CollectionPageContainer}
                 />
             </Suspense>
-        </div>
+        </ShopPageContainer>
     );
 };
 

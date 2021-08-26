@@ -115,7 +115,7 @@ export function* userSagas() {
     yield all([
         call(onGoogleSignInStart),
         call(onEmailSignInStart),
-        call(onCheckUserSession),
+        call(isUserAuthenticated),
         call(onSignOutStart),
         call(onSignUpStart),
         call(onSignUpSuccess),

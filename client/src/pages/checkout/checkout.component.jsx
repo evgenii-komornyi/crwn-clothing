@@ -18,7 +18,7 @@ import {
     WarningContainer,
 } from './checkout.styles';
 
-const CheckoutPage = ({ cartItems, total }) => {
+export const CheckoutPage = ({ cartItems, total }) => {
     const date = new Date();
     const year = date.getFullYear();
     const sliceYear = year.toString().slice(2);
